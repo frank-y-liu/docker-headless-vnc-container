@@ -49,11 +49,11 @@ Usage is **similar** for all provided images, e.g. for `consol/centos-xfce-vnc`:
 
 - Run command with mapping to local port `5901` (vnc protocol) and `6901` (vnc web access):
 
-      docker run -d -p 5901:5901 -p 6901:6901 consol/centos-xfce-vnc
+      docker run -d -p 5901:5901 -p 6901:6901 -v "$PWD":/source frankliu1/ubuntu:bionic_xfce_novnc
   
 - Change the default user and group within a container to your own with adding `--user $(id -u):$(id -g)`:
 
-      docker run -d -p 5901:5901 -p 6901:6901 --user $(id -u):$(id -g) consol/centos-xfce-vnc
+      docker run -d -p 5901:5901 -p 6901:6901 --user $(id -u):$(id -g) -v "$PWD":/source frankliu1/ubuntu:bionic_xfce_novnc
 
 - If you want to get into the container use interactive mode `-it` and `bash`
       
